@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="" />
+    <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/ICollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/ICollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/SortCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,7 +58,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-15",
-    "last_opened_file_path": "C:/Users/agnis/IdeaProjects/programming_lab6",
+    "last_opened_file_path": "C:/Users/agnis/IdeaProjects/ProgLab6Final-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +119,7 @@
       <workItem from="1684401748152" duration="4106000" />
       <workItem from="1684487293860" duration="2256000" />
       <workItem from="1684595106298" duration="6027000" />
+      <workItem from="1684603614555" duration="2476000" />
     </task>
     <task id="LOCAL-00001" summary="separation modules">
       <created>1683879895685</created>

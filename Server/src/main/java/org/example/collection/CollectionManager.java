@@ -170,13 +170,14 @@ public class CollectionManager implements ICollectionManager, Serializable {
         collectionManagerLogger.info("Коллекция очищена");
     }
 
-//    /**
-//     * shuffle collection
-//     */
-//    @Override
-//    public void shuffle() {
-//        Collections.shuffle(collection);
-//    }
+    /**
+     * shuffle collection
+     */
+    @Override
+    public LinkedList<SpaceMarine> shuffle() {
+        Collections.shuffle(collection);
+        return collection;
+    }
 
 //    /**
 //     * removes the healthiest person
@@ -199,33 +200,35 @@ public class CollectionManager implements ICollectionManager, Serializable {
 //        }
 //    }
 
-//    /**
-//     * sort collection
-//     */
-//    @Override
-//    public void sort() {
-//        Collections.sort(collection);
-//    }
+    /**
+     * sort collection
+     */
+    @Override
+    public LinkedList<SpaceMarine> sort() {
+        Collections.sort(collection);
+        return collection;
+    }
 
-//    /**
-//     * show elements with this kind of weapon
-//     *
-//     * @param weaponType
-//     */
-//    @Override
-//    public void filterByWeapon(Weapon weaponType) {
-//        ArrayList<SpaceMarine> filterObjects = new ArrayList<>();
-//        for (SpaceMarine spaceMarine : collection) {
-//            if (spaceMarine.getWeaponType() == weaponType) {
-//                filterObjects.add(spaceMarine);
-//            }
-//        }
-//        if (filterObjects.size() == 0) {
-//            System.out.println("Нет ни одного экземпляра с таким полем");
-//        } else {
+    /**
+     * show elements with this kind of weapon
+     *
+     * @param weaponType
+     */
+    @Override
+    public ArrayList<SpaceMarine> filterByWeapon(Weapon weaponType) {
+        ArrayList<SpaceMarine> filterObjects = new ArrayList<>();
+        for (SpaceMarine spaceMarine : collection) {
+            if (spaceMarine.getWeaponType() == weaponType) {
+                filterObjects.add(spaceMarine);
+            }
+        }
+        if (filterObjects.size() == 0) {
+            System.out.println("Нет ни одного экземпляра с таким полем");
+        }
+        return filterObjects;
 //            filterObjects.forEach(CollectionUtil::display);
-//        }
-//    }
+        }
+
 
 //    /**
 //     * find unique meleeWeapons and print them
@@ -266,197 +269,6 @@ public class CollectionManager implements ICollectionManager, Serializable {
         }
     }
 
-//    /**
-//     * add spaceMarine to collection
-//     *
-//     * @param request - spaceMarine from client
-//     */
-//    @Override
-//    public CommandResult add(Request<?> request) {
-//        try {
-//            SpaceMarine spaceMarine = (SpaceMarine) request.type;
-//            collection.add(spaceMarine);
-//            return new CommandResult(true, "Новый элемент успешно добавлен");
-//        } catch (Exception exception) {
-//            return new CommandResult(false, "Передан аргумент другого типа");
-//        }
-//    }
-////TODO write realization
-//    @Override
-//    public CommandResult sort(Request<?> request) {
-//        Collections.sort(collection);
-//        System.out.println("Коллекция отсортирована");
-//        return new CommandResult(true, collection.toString());    }
-////TODO write realization
-//    @Override
-//    public CommandResult shuffle(Request<?> request) {
-//        Collections.shuffle(collection);
-//        System.out.println("Коллекция перемешена");
-//        return new CommandResult(true, collection.toString());
-//    }
-//
-//    /**
-//     * @return information about collection
-//     */
-//    @Override
-//    public CommandResult show(Request<?> request) {
-//        return new CommandResult(true, information());
-//    }
-//
-//    /**
-//     * clears the collection
-//     */
-//    @Override
-//    public CommandResult clear(Request<?> request) {
-//        collection.clear();
-//        return new CommandResult(true, "Элементы удалены");
-//    }
-//    /**
-//     * print info about collection : name, creation date, count of spaceMarines
-//     */
-//    @Override
-//    public CommandResult info(Request<?> request) {
-//        String inf = "Type of collection:" + collection.getClass().getSimpleName() + "\nDate of initialization:" + date + "\nNumbers of elements:" + collection.size();
-//        return new CommandResult(true, inf);
-//    }
-//
-//
-//    /**
-//     * print information about commands
-//     */
-//    @Override
-//    public CommandResult help(Request<?> request) {
-//            StringBuilder result = new StringBuilder();
-//            CommandManager commandManager = new CommandManager(new RequestManager());
-//            commandManager.getCommandMap().forEach((description, command) -> result.append(command.getDescription()).append("\n"));
-//            return new CommandResult(true, result.toString());
-//        }
-//
-//
-//    @Override
-//    public CommandResult exit(Request<?> request) {
-//        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-//        atomicBoolean.set(true);
-//        return new CommandResult(true, "Теперь наши пути расходятся, как в море корабли");
-//    }
-////TODO write realization
-//    @Override
-//    public CommandResult printFieldDescendingWeapon(Request<?> request) {
-//        ArrayList<Weapon> descendingWeapon = new ArrayList<>();
-//        for (SpaceMarine spaceMarine : collection) {
-//            Weapon weaponType = spaceMarine.getWeaponType();
-//            if (Collections.frequency(descendingWeapon, weaponType) == 0) {
-//                descendingWeapon.add(weaponType);
-//            }
-//        }
-//        Collections.sort(descendingWeapon, Collections.reverseOrder());
-//        return new CommandResult(true, String.valueOf(descendingWeapon));
-//    }
-//    /**
-//     * filter of spaceMarine whose weaponType matches with entered user's weaponType
-//     */
-//    @Override
-//    public CommandResult filterByWeapon(Request<?> request) {
-//        ArrayList<SpaceMarine> filterObj = new ArrayList<>();
-//        Weapon weaponType = (Weapon) request.type;
-//        for (SpaceMarine spaceMarine : collection) {
-//            if (spaceMarine.getWeaponType() == weaponType) {
-//                filterObj.add(spaceMarine);
-//                return new CommandResult(true, spaceMarine.toString());
-//            }
-//        } if (filterObj.isEmpty()){
-//            return new CommandResult(false, "Нет ни одного объекта с такой же характеристикой");
-//        }
-//        return new CommandResult(true, "Команда выполнена успешно");
-//    }
-//    @Override
-//    public CommandResult printUniqueMeleeWeapon(Request<?> request) {
-//        ArrayList<MeleeWeapon> uniq = new ArrayList<>();
-//        for (SpaceMarine spaceMarine : collection) {
-//            MeleeWeapon meleeWeapon = spaceMarine.getMeleeWeapon();
-//            if (Collections.frequency(uniq, meleeWeapon) == 0) {
-//                uniq.add(meleeWeapon);
-//            }
-//        }
-//        System.out.println("Выведены все уникальные значения");
-//        return new CommandResult(true, String.valueOf(uniq));
-//    }
-//
-//    /**
-//     * check if the character exists, and if so, remove it from the collection
-//     *
-//     * @param request - id which client entered
-//     */
-//    @Override
-//    public CommandResult removeByID(Request<?> request) {
-//        String message = null;
-//        long ID;
-//        try {
-//            ID = Long.parseLong((String) request.type);
-//            if (collection.stream().noneMatch(spaceMarine -> spaceMarine.getId() == (ID)))
-//                return new CommandResult(false, "Персонажа с таким ID не существует");
-//            collection.removeIf(spaceMarine -> spaceMarine.getId() == (ID));
-//            return new CommandResult(true, "Персонаж успешно удален");
-//        } catch (NumberFormatException e) {
-//            message = "Вы неправильно ввели ID";
-//        }
-//        return new CommandResult(true, message);
-//    }
-//
-//    /**
-//     * removes the healthiest person
-//     */
-//    @Override
-//    public CommandResult removeGreater(Request<?> request) {
-//        String message = null;
-//        try {
-//            float health = Float.parseFloat((String) request.type);
-//            if (health > 0) {
-//                collection.removeIf(spaceMarine -> spaceMarine.getHealth() > health);
-//                message = "Удален персонаж со здоровьем выше указанного";
-//            } else if (health < 0) {
-//                message = "Здоровье не может быть меньше нуля";
-//            }
-//        } catch (NumberFormatException e) {
-//            System.out.println("Уровень здоровья введен некорректно");
-//        }
-//        return new CommandResult(true, message);
-//    }
-//
-//
-//
-//    /**
-//     * change the parameters of the character with the id entered by the client,
-//     * check if such a character exists
-//     */
-//    @Override
-//    public CommandResult update(Request<?> request) {
-//        String message = null;
-//        try {
-//            SpaceMarine spaceMarine = (SpaceMarine) request.type;
-//            if (getByID(spaceMarine.getId()) == null) {
-//                return new CommandResult(false, "Персонажа с таким ID не существует");
-//            }
-//            collection.stream()
-//                    .filter(spaceMarine1 -> spaceMarine1.getId() == spaceMarine.getId())
-//                    .forEach(spaceMarine1 -> spaceMarine1.update(spaceMarine));
-//            return new CommandResult(true, "Персонаж успешно обновлен");
-//        } catch (NumberFormatException e) {
-//            System.out.println("ID введен неверно");
-//        }
-//        return new CommandResult(true, message);
-//    }
-//    public boolean toHealth(float health) {
-//        boolean flag = true;
-//        for (SpaceMarine spaceMarine : collection) {
-//            if (health > spaceMarine.getHealth()) {
-//                flag = true;
-//            } else {
-//                flag = false;
-//            }
-//        }
-//        return flag;
-//    }
 }
 
 

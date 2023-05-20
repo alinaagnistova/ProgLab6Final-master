@@ -1,50 +1,31 @@
 package org.example.command;
 
-import org.example.client.RequestManager;
-import org.example.common.network.CommandResult;
-import org.example.common.network.Request;
-import org.example.server.collection.CollectionManager;
+
+import org.example.collection.CollectionManager;
+import org.example.dtp.Request;
+import org.example.dtp.Response;
+import org.example.dtp.ResponseStatus;
+import org.example.error.IllegalArgumentsException;
+
 /**
  * shuffle : shuffle collection items in random order
  */
-public class ShuffleCommand extends BaseCommand{
-    public ShuffleCommand(RequestManager requestManager) {
-        super(requestManager);
-    }
-    //    private final CollectionManager collection;
+public class ShuffleCommand extends BaseCommand implements CollectionEditor{
+    private final CollectionManager collectionManager;
 
-//    public ShuffleCommand(CollectionManager collection) {
-//        this.collection = collection;
-//    }
-
-    public void execute(String[] args) {
-        if (args.length > 1) {
-            System.out.println("Вы неправильно ввели команду");
-        } else {
-            Request<String> request = new Request<>(getName(), null, null);
-            CommandResult result = requestManager.sendRequest(request);
-            if (result.status) {
-                System.out.println((result.message));
-            } else
-                System.out.println("Ошибка");
-        }
-//        if (args.length > 1) {
-//            System.out.println("Вы неправильно ввели команду");
-//        } if (collection.getCollection().size() == 0){
-//            System.out.println("Сортировать нечего, файл пуст...");
-//        } else {
-//            collection.shuffle();
-//            System.out.println("Команда выполнена");
-//        }
-    }
-
-
-    public String getDescription() {
-        return "shuffle : перемешать элементы коллекции в случайном порядке";
+    public ShuffleCommand(String name, String description, CollectionManager collectionManager) {
+        super("shuffle", "перемешать элементы коллекции в случайном порядке");
+        this.collectionManager = collectionManager;
     }
 
     @Override
-    public String getName() {
-        return "shuffle";
+    public Response execute(Request request) throws IllegalArgumentsException {
+        if (!request.getArgs().isBlank()) throw new IllegalArgumentsException();
+        if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
+            return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
+        }
+        return new Response(ResponseStatus.OK, "Коллекция: ", collectionManager.shuffle());
     }
+
 }
+
