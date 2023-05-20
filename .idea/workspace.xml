@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ProgLab6Final:jar2" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PViqdUEej4aNEX1AXh9lrcU8iQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-15",
+    "last_opened_file_path": "C:/Users/agnis/IdeaProjects/programming_lab6",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Server\src\main\java\org\example" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Client\src\main\java\org\example" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Common\src\main\java\org\example" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\out\artifacts\ProgLab6Final_jar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Client" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Server" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\Server\src" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final-master\out\artifacts\ProgLab6Final_jar2" />
+      <recent name="C:\Users\agnis\IdeaProjects\ProgLab6Final" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="lab6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="lab6" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="" />
+      <created>1683548846903</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683548846903</updated>
+      <workItem from="1683548848072" duration="950000" />
+      <workItem from="1683559124657" duration="2275000" />
+      <workItem from="1683642910303" duration="10175000" />
+      <workItem from="1683878093191" duration="2320000" />
+      <workItem from="1683899178990" duration="1017000" />
+      <workItem from="1684072701127" duration="6329000" />
+      <workItem from="1684268501493" duration="3113000" />
+      <workItem from="1684327983915" duration="6745000" />
+      <workItem from="1684401748152" duration="4106000" />
+      <workItem from="1684487293860" duration="2256000" />
+      <workItem from="1684595106298" duration="6027000" />
+    </task>
+    <task id="LOCAL-00001" summary="separation modules">
+      <created>1683879895685</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683879895685</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="separation modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="separation modules" />
+  </component>
+</project>
