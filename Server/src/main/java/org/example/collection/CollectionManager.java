@@ -230,36 +230,36 @@ public class CollectionManager implements ICollectionManager, Serializable {
         }
 
 
-//    /**
-//     * find unique meleeWeapons and print them
-//     */
-//    @Override
-//    public void printUniqueMeleeWeapon() {
-//        ArrayList<MeleeWeapon> uniq = new ArrayList<>();
-//        for (SpaceMarine spaceMarine : collection) {
-//            MeleeWeapon meleeWeapon = spaceMarine.getMeleeWeapon();
-//            if (Collections.frequency(uniq, meleeWeapon) == 0) {
-//                uniq.add(meleeWeapon);
-//            }
-//        }
-//        System.out.println(uniq);
-//    }
+    /**
+     * find unique meleeWeapons and print them
+     */
+    @Override
+    public ArrayList<MeleeWeapon> printUniqueMeleeWeapon() {
+        ArrayList<MeleeWeapon> uniq = new ArrayList<>();
+        for (SpaceMarine spaceMarine : collection) {
+            MeleeWeapon meleeWeapon = spaceMarine.getMeleeWeapon();
+            if (Collections.frequency(uniq, meleeWeapon) == 0) {
+                uniq.add(meleeWeapon);
+            }
+        }
+        return uniq;
+    }
 
-//    /**
-//     * find all weapons in collection and print it (descending)
-//     */
-//    @Override
-//    public void printFieldDescendingWeapon() {
-//        ArrayList<Weapon> descendingWeapon = new ArrayList<>();
-//        for (SpaceMarine spaceMarine : collection) {
-//            Weapon weaponType = spaceMarine.getWeaponType();
-//            if (Collections.frequency(descendingWeapon, weaponType) == 0) {
-//                descendingWeapon.add(weaponType);
-//            }
-//        }
-//        Collections.sort(descendingWeapon, Collections.reverseOrder());
-//        System.out.println(descendingWeapon);
-//    }
+    /**
+     * find all weapons in collection and print it (descending)
+     */
+    @Override
+    public ArrayList<Weapon> printFieldDescendingWeapon() {
+        ArrayList<Weapon> descendingWeapon = new ArrayList<>();
+        for (SpaceMarine spaceMarine : collection) {
+            Weapon weaponType = spaceMarine.getWeaponType();
+            if (Collections.frequency(descendingWeapon, weaponType) == 0) {
+                descendingWeapon.add(weaponType);
+            }
+        }
+        Collections.sort(descendingWeapon, Collections.reverseOrder());
+        return descendingWeapon;
+    }
 @Override
     public void checkCollection() {
         for (SpaceMarine spaceMarine : collection) {

@@ -1,5 +1,6 @@
 package org.example.collection;
 
+import org.example.data.MeleeWeapon;
 import org.example.data.SpaceMarine;
 import org.example.data.Weapon;
 
@@ -23,6 +24,6 @@ public interface ICollectionManager {
     LinkedList<SpaceMarine> shuffle();
 
     ArrayList<SpaceMarine> filterByWeapon(Weapon weaponType);
-//    void printUniqueMeleeWeapon();
-//    void printFieldDescendingWeapon();
+    ArrayList<MeleeWeapon> printUniqueMeleeWeapon();
+    ArrayList<Weapon> printFieldDescendingWeapon();
 }
