@@ -18,7 +18,6 @@ public class RequestHandler {
 
     public Response handle(Request request) {
         try {
-            commandManager.addToHistory(request.getCommandName());
             return commandManager.execute(request);
         } catch (IllegalArgumentsException e) {
             return new Response(ResponseStatus.WRONG_ARGUMENTS,

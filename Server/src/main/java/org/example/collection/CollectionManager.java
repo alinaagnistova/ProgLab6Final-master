@@ -261,12 +261,13 @@ public class CollectionManager implements ICollectionManager, Serializable {
         return descendingWeapon;
     }
 @Override
-    public void checkCollection() {
+    public boolean checkCollection() {
         for (SpaceMarine spaceMarine : collection) {
             if (!collectionUtil.checkIfCorrect(spaceMarine)) {
                 throw new IncorrectCollectionException("Исходные данные в коллекции неверны, исправьте файл и попробуйте ещё раз");
             }
         }
+        return true;
     }
 
 }

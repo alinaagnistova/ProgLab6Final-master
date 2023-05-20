@@ -16,7 +16,7 @@ import org.example.utils.ConsoleColors;
 public class InfoCommand extends BaseCommand {
     private final CollectionManager collectionManager;
 
-    public InfoCommand(String name, String description, CollectionManager collectionManager) {
+    public InfoCommand(CollectionManager collectionManager) {
         super("info", ": вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
         this.collectionManager = collectionManager;
     }

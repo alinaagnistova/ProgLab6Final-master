@@ -15,7 +15,7 @@ public interface ICollectionManager {
     void removeSpaceMarines(Collection<SpaceMarine> collection);
     String information();
     void addSpaceMarine(SpaceMarine spaceMarine);
-    void checkCollection();
+    boolean checkCollection();
     void updateId(SpaceMarine spaceMarine, Long id);
 //    void removeById(Long id);
 //    void getByID();

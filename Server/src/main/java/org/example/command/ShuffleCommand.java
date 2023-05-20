@@ -13,7 +13,7 @@ import org.example.error.IllegalArgumentsException;
 public class ShuffleCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
-    public ShuffleCommand(String name, String description, CollectionManager collectionManager) {
+    public ShuffleCommand(CollectionManager collectionManager) {
         super("shuffle", "перемешать элементы коллекции в случайном порядке");
         this.collectionManager = collectionManager;
     }

@@ -47,7 +47,7 @@ public class Server {
                 try {
                     if (scanner.ready()) {
                         String line = scanner.readLine();
-                        if (line.equals("save") || line.equals("s")) {
+                        if (line.equals("save")) {
                             FileManager.saveToXml();
                             serverLogger.info("Коллекция сохранена");
                         }

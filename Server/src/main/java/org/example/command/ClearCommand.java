@@ -15,7 +15,7 @@ import org.example.error.IllegalArgumentsException;
 public class ClearCommand extends BaseCommand implements CollectionEditor{
     private CollectionManager collectionManager;
 
-    public ClearCommand(String name, String description, CollectionManager collectionManager) {
+    public ClearCommand(CollectionManager collectionManager) {
         super("clear", "clear : очистить коллекцию");
         this.collectionManager = collectionManager;
     }

@@ -15,7 +15,7 @@ import java.util.Objects;
 public class AddCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
-    public AddCommand(String name, String description, CollectionManager collectionManager) {
+    public AddCommand(CollectionManager collectionManager) {
         super("add", "add {element}: добавить новый элемент в коллекцию\"");
         this.collectionManager = collectionManager;
     }

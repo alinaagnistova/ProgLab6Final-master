@@ -10,7 +10,7 @@ import org.example.error.IllegalArgumentsException;
  * exit : terminate the program (without saving to a file)
  */
 public class ExitCommand extends BaseCommand {
-    public ExitCommand(String name, String description) {
+    public ExitCommand() {
         super("exit", ": завершить программу (без сохранения в файл)");
     }
     /**

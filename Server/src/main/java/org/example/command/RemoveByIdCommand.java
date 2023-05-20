@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class RemoveByIdCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
-    public RemoveByIdCommand(String name, String description, CollectionManager collectionManager) {
+    public RemoveByIdCommand(CollectionManager collectionManager) {
         super("remove_by_id", " id: удалить элемент из коллекции по его id");
         this.collectionManager = collectionManager;
     }

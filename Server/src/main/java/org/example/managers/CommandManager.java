@@ -52,11 +52,6 @@ public class CommandManager{
         return commands.values();
     }
 
-    public void addToHistory(String line){
-        if(line.isBlank()) return;
-        this.commandHistory.add(line);
-        commandManagerLogger.info("Добавлена команда в историю" + line, line);
-    }
 
     public List<String> getCommandHistory(){return commandHistory;}
 
