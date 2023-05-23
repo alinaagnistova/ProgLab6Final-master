@@ -23,7 +23,7 @@ public class PrintUniqueMeleeWeaponCommand extends BaseCommand{
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.printUniqueMeleeWeapon() + "\n");
+        return new Response(ResponseStatus.OK, "Уникальные значения поля meleeWeapon: " + collectionManager.printUniqueMeleeWeapon());
     }
 
 }

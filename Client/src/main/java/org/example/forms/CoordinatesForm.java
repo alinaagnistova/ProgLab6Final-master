@@ -1,5 +1,6 @@
 package org.example.forms;
 
+import org.example.utils.ReadManager;
 import org.example.utils.Readable;
 import org.example.console.*;
 import org.example.data.Coordinates;
@@ -10,7 +11,6 @@ import org.example.utils.ExecuteFileManager;
  */
 public class CoordinatesForm extends Form<Coordinates> {
     private final ReaderWriter console;
-    private Readable readManager;
     private final UserInput scanner;
 
     public CoordinatesForm(ReaderWriter console) {
@@ -29,6 +29,7 @@ public class CoordinatesForm extends Form<Coordinates> {
      */
     @Override
     public Coordinates build() {
+        ReadManager readManager = new ReadManager();
         return new Coordinates(
                 readManager.readCoordinateX(),
                 readManager.readCoordinateY()

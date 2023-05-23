@@ -39,7 +39,7 @@ public class RuntimeManager {
         while (true) {
             try{
                 if (!userScanner.hasNext()) throw new ExitObligedException();
-                String[] userCommand = (userScanner.nextLine().trim() + " ").split(" ", 2); // прибавляем пробел, чтобы split выдал два элемента в массиве
+                String[] userCommand = (userScanner.nextLine().trim().toLowerCase() + " ").split(" ", 2); // прибавляем пробел, чтобы split выдал два элемента в массиве
                 Response response = client.sendAndAskResponse(new Request(userCommand[0].trim(), userCommand[1].trim()));
                 this.printResponse(response);
                 switch (response.getStatus()){

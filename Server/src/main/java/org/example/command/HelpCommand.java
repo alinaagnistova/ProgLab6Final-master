@@ -28,6 +28,6 @@ public class HelpCommand extends BaseCommand {
         return new Response(ResponseStatus.OK,
                 String.join("\n",
                         commandManager.getCommands()
-                                .stream().map(BaseCommand::getDescription) +"\n"));
+                                .stream().map(BaseCommand::getDescription).toList()));
     }
 }

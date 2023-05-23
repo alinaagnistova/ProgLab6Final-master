@@ -30,15 +30,10 @@ public class FilterByWeaponCommand extends BaseCommand{
      */
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentsException();
-        if (Objects.isNull(request.getObject())){
-            return new Response(ResponseStatus.ASK_OBJECT, "Для команды " + this.getName() + " требуется объект");
-        }
-        if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
-            return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
-        }
-        Weapon weapon = Weapon.valueOf(request.getArgs().trim());
-        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.filterByWeapon(weapon));
+        Weapon weapon;
+        if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
+         weapon = Weapon.valueOf(request.getArgs().trim().toUpperCase());
+        return new Response(ResponseStatus.OK, "Коллекция: \n" + collectionManager.filterByWeapon(weapon));
     }
 
 }

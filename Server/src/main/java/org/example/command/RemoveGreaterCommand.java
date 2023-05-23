@@ -30,16 +30,10 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
      */
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentsException();
+        if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
         try {
-            if (Objects.isNull(request.getObject())) {
-                return new Response(ResponseStatus.ASK_OBJECT, "Для команды " + this.getName() + " требуется объект");
-            }
-            Collection<SpaceMarine> toRemove = collectionManager.getCollection().stream()
-                    .filter(Objects::nonNull)
-                    .filter(spaceMarine -> spaceMarine.compareTo(request.getObject()) >= 1)
-                    .toList();
-            collectionManager.removeSpaceMarines(toRemove);
+            float health = Float.parseFloat(request.getArgs().trim());
+            collectionManager.removeGreater(health);
             return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный");
         } catch (NoSuchElementException e) {
             return new Response(ResponseStatus.ERROR, "В коллекции нет элементов");

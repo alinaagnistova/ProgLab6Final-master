@@ -4,13 +4,16 @@ import org.example.collection.CollectionManager;
 
 import javax.xml.bind.*;
 import java.io.*;
+import java.util.Scanner;
 
 public final class FileManager {
 
-        private static String fileName;
+    private static String fileName;
+
     public FileManager(String fileName) {
         fileName = this.fileName;
     }
+
     public FileManager() {
     }
 
@@ -20,7 +23,7 @@ public final class FileManager {
      * @throws JAXBException
      * @throws IOException
      */
-    public static void saveToXml(){
+    public static void saveToXml() {
         try {
             CollectionManager collectionManager = new CollectionManager();
             JAXBContext jaxbContext = JAXBContext.newInstance(CollectionManager.class);
@@ -58,8 +61,23 @@ public final class FileManager {
             System.out.println("Указанный файл не найден");
         }
         return null;
+    }
+
+    public void readFileName() {
+        while (true) {
+            try {
+                System.out.println("Введите название файла еще раз");
+                Scanner scanner = new Scanner(System.in);
+                String fileName = scanner.nextLine();
+                FileManager.loadFromXml(fileName);
+                } catch (JAXBException e) {
+                System.out.println("С файлом что-то не так, либо он пуст");
+            } catch (FileNotFoundException e) {
+                System.out.println("Файл не найден");
+            }
         }
     }
+}
 
 
 

@@ -118,9 +118,9 @@ public class CollectionManager implements ICollectionManager, Serializable {
      */
     @Override
     public void addSpaceMarine(SpaceMarine spaceMarine) {
+        spaceMarine.setId(GenerationID.generateID());
         collection.add(spaceMarine);
         collectionManagerLogger.info("Добавлен объект в коллекцию", spaceMarine);
-
     }
 
     /**
@@ -153,7 +153,7 @@ public class CollectionManager implements ICollectionManager, Serializable {
     @Override
     public void removeSpaceMarine(SpaceMarine spaceMarine) {
         collection.remove(spaceMarine);
-        collectionManagerLogger.info("Элемент с ID" + spaceMarine.getId() + "удалён");
+        collectionManagerLogger.info("Элемент удалён");
     }
     @Override
     public void removeSpaceMarines(Collection<SpaceMarine> collection) {
@@ -184,20 +184,34 @@ public class CollectionManager implements ICollectionManager, Serializable {
 //     * @param health
 //     */
 //    @Override
-//    public void removeGreater(Float health) {
-//        Iterator<SpaceMarine> iterator = collection.iterator();
-//        while (iterator.hasNext()) {
-//            SpaceMarine spaceMarine = iterator.next();
-//            {
-//                if (spaceMarine.getHealth() > health) {
-//                    iterator.remove();
-//                    System.out.println("Элемент удален из коллекции: " + spaceMarine.getName());
-//                } else if (!iterator.hasNext()) {
-//                    System.out.println("Нет элементов с таким же уровнем здоровья");
-//                }
-//            }
-//        }
-//    }
+    public void removeGreater(Float health) {
+        Iterator<SpaceMarine> iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            SpaceMarine spaceMarine = iterator.next();
+            {
+                if (spaceMarine.getHealth() > health) {
+                    iterator.remove();
+                    System.out.println("Элемент удален из коллекции: " + spaceMarine.getName());
+                } else if (!iterator.hasNext()) {
+                    System.out.println("Нет элементов с таким же уровнем здоровья");
+                }
+            }
+        }
+    }
+    public void removeById(Long ID) {
+        Iterator<SpaceMarine> iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            SpaceMarine spaceMarine = iterator.next();
+            {
+                if (spaceMarine.getId().equals(ID)) {
+                    iterator.remove();
+                    System.out.println("Элемент удален из коллекции");
+                } else if (!iterator.hasNext()) {
+                    System.out.println("Элемента с таким ID не существует");
+                }
+            }
+        }
+    }
 
     /**
      * sort collection

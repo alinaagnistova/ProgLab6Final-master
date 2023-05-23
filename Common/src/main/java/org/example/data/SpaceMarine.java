@@ -1,6 +1,5 @@
 package org.example.data;
 
-//import org.example.server.GenerationID;
 import org.example.error.InvalidInputException;
 
 import javax.xml.bind.annotation.*;

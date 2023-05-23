@@ -32,7 +32,7 @@ public class RemoveByIdCommand extends BaseCommand implements CollectionEditor{
         try {
             long ID = Long.parseLong(request.getArgs().trim());
             if (!CollectionUtil.checkExist(ID)) throw new NoSuchIDException();
-            collectionManager.removeSpaceMarine(collectionManager.getByID(ID));
+            collectionManager.removeById(ID);
             return new Response(ResponseStatus.OK,"Объект удален успешно\n");
         } catch (NoSuchIDException err) {
             return new Response(ResponseStatus.ERROR,"В коллекции нет элемента с таким id\n");

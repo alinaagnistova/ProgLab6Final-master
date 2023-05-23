@@ -1,5 +1,6 @@
 package org.example.forms;
 
+import org.example.utils.ReadManager;
 import org.example.utils.Readable;
 import org.example.console.*;
 import org.example.data.Chapter;
@@ -7,7 +8,6 @@ import org.example.utils.ExecuteFileManager;
 
 public class ChapterForm extends Form<Chapter>{
     private final ReaderWriter console;
-    private Readable readManager;
     private final UserInput scanner;
 
     public ChapterForm(ReaderWriter console) {
@@ -25,6 +25,7 @@ public class ChapterForm extends Form<Chapter>{
      */
     @Override
     public Chapter build() {
+        ReadManager readManager = new ReadManager();
         return new Chapter(
                 readManager.readName(),
                 readManager.readChapterMarinesCount()

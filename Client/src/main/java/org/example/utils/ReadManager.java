@@ -4,7 +4,6 @@ import org.example.console.Console;
 import org.example.data.AstartesCategory;
 import org.example.data.MeleeWeapon;
 import org.example.data.Weapon;
-import org.example.utils.Readable;
 
 import java.util.Arrays;
 /**
@@ -141,13 +140,19 @@ public class ReadManager implements Readable {
     @Override
     public Integer readChapterMarinesCount(){
         consoleManager.write("Введите количество бойцов в отряде:");
-        Integer marinesCount;
-        try {
-            marinesCount = Integer.valueOf(consoleManager.getValidatedValue(""));
-        }catch (NumberFormatException e){
-            marinesCount = readChapterMarinesCount();
+        while (true) {
+            String marinesCountString = consoleManager.readLine();
+            try {
+                int marinesCount = Integer.parseInt(marinesCountString);
+                if (marinesCount >= 0) {
+                    return marinesCount;
+                } else {
+                    System.out.println("Количество бойцов должно быть не меньше 0");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Число введено неверно");
+            }
         }
-        return marinesCount;
     }
 
     /**

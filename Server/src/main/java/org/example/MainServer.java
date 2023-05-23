@@ -10,6 +10,7 @@ import org.example.managers.FileManager;
 import org.example.utils.*;
 
 import javax.xml.bind.JAXBException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
@@ -21,9 +22,9 @@ public class MainServer extends Thread{
         static final Logger rootLogger = LogManager.getRootLogger();
 
         public static void main(String[] args) {
-            if(args.length != 0){
+            if(args.length > 1){
                 try{
-                    PORT = Integer.parseInt(args[0]);
+                    PORT = Integer.parseInt(args[1]);
                 } catch (NumberFormatException ignored) {}
             }
             CollectionManager collectionManager = new CollectionManager();
@@ -32,9 +33,15 @@ public class MainServer extends Thread{
 
             try{
                 MainServer.rootLogger.info("Создание объектов");
-                fileManager.loadFromXml(args[0]);
-                collectionManager.checkCollection();
-                MainServer.rootLogger.info("Создание объектов успешно завершено");
+                String link = args[0];
+                File file = new File(link);
+                if (file.exists() && !file.isDirectory()) {
+                    fileManager.loadFromXml(args[0]);
+                    collectionManager.checkCollection();
+                    MainServer.rootLogger.info("Создание объектов успешно завершено");
+                }else{
+                    fileManager.readFileName();
+                }
             } catch (JAXBException | FileNotFoundException e){
                 console.write(ConsoleColors.toColor("До свидания!", ConsoleColors.YELLOW));
                 MainServer.rootLogger.error("Ошибка во времени создания объектов");

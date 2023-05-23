@@ -10,43 +10,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Server_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProgLab6Final_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Client_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProgLab6Final_jar2.xml" beforeDir="false" />
+    <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="fixing command realization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/SpaceMarineForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/SpaceMarineForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/ChapterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/ChapterForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/CoordinatesForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/CoordinatesForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ReadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ReadManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/RuntimeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/RuntimeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/java/org/example/data/SpaceMarine.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/org/example/data/SpaceMarine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/MainServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/ICollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/ICollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/BaseCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/BaseCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExitCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/InfoCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintFieldDescendingWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintFieldDescendingWeapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintUniqueMeleeWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintUniqueMeleeWeaponCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveByIdCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveGreaterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/SortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/SortCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Executable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/GenerationID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/MainServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/collection/CollectionManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/collection/CollectionUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server/collection/ICollectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/managers/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/managers/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/managers/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/managers/FileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +43,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2998555d-58bf-43cf-9e45-f873722622e2" />
+        <option name="url" value="https://github.com/alinaagnistova/ProgLab6Final-master.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -152,7 +145,8 @@
       <workItem from="1684603614555" duration="3115000" />
       <workItem from="1684620104212" duration="2385000" />
       <workItem from="1684778975293" duration="3009000" />
-      <workItem from="1684825904065" duration="4381000" />
+      <workItem from="1684825904065" duration="5549000" />
+      <workItem from="1684835190561" duration="7113000" />
     </task>
     <task id="LOCAL-00001" summary="separation modules">
       <created>1683879895685</created>
@@ -182,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684621893148</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixing command realization">
+      <created>1684832268341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684832268342</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +194,7 @@
     <MESSAGE value="rewrite  command's realization" />
     <MESSAGE value="rewrote command realization" />
     <MESSAGE value="wrote server module" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote server module" />
+    <MESSAGE value="fixing command realization" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing command realization" />
   </component>
 </project>

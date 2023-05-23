@@ -30,7 +30,6 @@ public class CommandManager{
     /**
      * Поле для истории команд
      */
-    private final List<String> commandHistory = new ArrayList<>();
     private final FileManager fileManager;
 
     static final Logger commandManagerLogger = LogManager.getLogger(CommandManager.class);
@@ -53,7 +52,6 @@ public class CommandManager{
     }
 
 
-    public List<String> getCommandHistory(){return commandHistory;}
 
     /**
      * Выполняет команду
@@ -70,7 +68,7 @@ public class CommandManager{
             throw new NoSuchCommandException();
         }
         Response response = command.execute(request);
-        commandManagerLogger.info("Выполнение команды", response);
+        commandManagerLogger.info("Выполнение команды\n", response);
         if (command instanceof CollectionEditor) {
             commandManagerLogger.info("Файл обновлен");
             FileManager.saveToXml();
