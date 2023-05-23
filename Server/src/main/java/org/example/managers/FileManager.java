@@ -64,19 +64,22 @@ public final class FileManager {
     }
 
     public void readFileName() {
-        while (true) {
+        Scanner scanner = new Scanner(System.in);
+        boolean isFileRead = false;
+        while (!isFileRead) {
             try {
                 System.out.println("Введите название файла еще раз");
-                Scanner scanner = new Scanner(System.in);
-                String fileName = scanner.nextLine();
-                    File file = new File(fileName);
+                String fileName = scanner.nextLine().trim();
+                if (fileName.isEmpty() || fileName.isBlank()){
+                    System.out.println("Введенная строка не может быть именем файла");
+                    continue;
+                }
+                File file = new File(fileName);
                 if (file.exists() && !file.isDirectory()) {
                     FileManager.loadFromXml(fileName);
-                    break;
-                }else{
-                    readFileName();
+                    isFileRead = true;
                 }
-                } catch (JAXBException e) {
+            } catch (JAXBException e) {
                 System.out.println("С файлом что-то не так, либо он пуст");
             } catch (FileNotFoundException e) {
                 System.out.println("Файл не найден");

@@ -31,18 +31,15 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
         if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
-        boolean flag = true;
         try {
-            while (flag) {
                 float health = Float.parseFloat(request.getArgs().trim());
                 if (health > 0) {
-                    flag = false;
                     collectionManager.removeGreater(health);
                     return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный");
                 } else {
                     System.out.println("Уровень здоровье должен быть больше 0");
+                    return new Response(ResponseStatus.WRONG_ARGUMENTS, "Упс, что-то пошло не так");
                 }
-            }
         } catch (NoSuchElementException e) {
             return new Response(ResponseStatus.ERROR, "В коллекции нет элементов");
         } catch (FileModeException e) {
@@ -50,7 +47,6 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
         } catch (NumberFormatException e){
             return new Response(ResponseStatus.ERROR, "Число введено неверно");
         }
-        return null;
     }
     }
 

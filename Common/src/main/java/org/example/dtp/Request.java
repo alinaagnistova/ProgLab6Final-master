@@ -1,8 +1,6 @@
 package org.example.dtp;
 
-
 import org.example.data.SpaceMarine;
-
 import java.io.Serializable;
 import java.util.Objects;
 

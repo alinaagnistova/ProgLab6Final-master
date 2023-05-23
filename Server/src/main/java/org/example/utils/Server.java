@@ -47,6 +47,7 @@ public class Server {
                 try {
                     if (scanner.ready()) {
                         String line = scanner.readLine();
+                        // TODO: when we close app line == null
                         if (line.equals("save")) {
                             FileManager.saveToXml();
                             serverLogger.info("Коллекция сохранена");
@@ -66,6 +67,8 @@ public class Server {
         } catch (OpeningServerException e) {
             console.printError("Сервер не может быть запущен");
             serverLogger.fatal("Сервер не может быть запущен");
+        } catch (NullPointerException ex){
+            serverLogger.warn("OMG!!! SEEMS LIKE FUCKED UP ^_^");
         }
     }
 

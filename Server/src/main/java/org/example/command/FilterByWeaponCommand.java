@@ -11,6 +11,7 @@ import org.example.error.IllegalArgumentsException;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -33,10 +34,13 @@ public class FilterByWeaponCommand extends BaseCommand{
      */
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
-        Weapon weapon;
         if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
-         weapon = Weapon.valueOf(request.getArgs().trim().toUpperCase());
-        return new Response(ResponseStatus.OK, "Элементы коллекции с заданным weaponType: \n" + collectionManager.filterByWeapon(weapon));
+        try {
+            Weapon weapon = Weapon.valueOf(request.getArgs().trim().toUpperCase());
+            return new Response(ResponseStatus.OK, "Элементы коллекции с заданным weaponType: \n" + collectionManager.filterByWeapon(weapon));
+        } catch (IllegalArgumentException exception){
+            System.out.println("Введенный тип оружия не существует. Попробуйте что-то из списка: " + Arrays.toString(Weapon.values()));
+        }
+        return new Response(ResponseStatus.ERROR, "Хули ты мне тут херню пихаешь? Это не енам сука \n");
     }
-
 }
