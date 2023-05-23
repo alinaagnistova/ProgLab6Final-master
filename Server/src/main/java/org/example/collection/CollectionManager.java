@@ -227,18 +227,17 @@ public class CollectionManager implements ICollectionManager, Serializable {
      * @param weaponType
      */
     @Override
-    public ArrayList<SpaceMarine> filterByWeapon(Weapon weaponType) {
-        ArrayList<SpaceMarine> filterObjects = new ArrayList<>();
+    public String filterByWeapon(Weapon weaponType) {
+        StringBuilder filterObjects = new StringBuilder();
         for (SpaceMarine spaceMarine : collection) {
             if (spaceMarine.getWeaponType() == weaponType) {
-                filterObjects.add(spaceMarine);
+                filterObjects.append(CollectionUtil.display(spaceMarine));
             }
         }
-        if (filterObjects.size() == 0) {
+        if (filterObjects.length() == 0) {
             System.out.println("Нет ни одного экземпляра с таким полем");
         }
-        return filterObjects;
-//            filterObjects.forEach(CollectionUtil::display);
+        return filterObjects.toString();
         }
 
 

@@ -1,6 +1,8 @@
 package org.example.command;
 
 import org.example.collection.CollectionManager;
+import org.example.collection.CollectionUtil;
+import org.example.data.SpaceMarine;
 import org.example.data.Weapon;
 import org.example.dtp.Request;
 import org.example.dtp.Response;
@@ -8,6 +10,7 @@ import org.example.dtp.ResponseStatus;
 import org.example.error.IllegalArgumentsException;
 
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -33,7 +36,7 @@ public class FilterByWeaponCommand extends BaseCommand{
         Weapon weapon;
         if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
          weapon = Weapon.valueOf(request.getArgs().trim().toUpperCase());
-        return new Response(ResponseStatus.OK, "Коллекция: \n" + collectionManager.filterByWeapon(weapon));
+        return new Response(ResponseStatus.OK, "Элементы коллекции с заданным weaponType: \n" + collectionManager.filterByWeapon(weapon));
     }
 
 }

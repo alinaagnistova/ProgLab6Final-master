@@ -6,7 +6,6 @@ import org.example.data.Weapon;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 
 public interface ICollectionManager {
     String info();
@@ -23,7 +22,7 @@ public interface ICollectionManager {
     void sort();
     void shuffle();
 
-    ArrayList<SpaceMarine> filterByWeapon(Weapon weaponType);
+    String filterByWeapon(Weapon weaponType);
     ArrayList<MeleeWeapon> printUniqueMeleeWeapon();
     ArrayList<Weapon> printFieldDescendingWeapon();
 }

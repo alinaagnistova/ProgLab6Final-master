@@ -31,15 +31,26 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
         if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
+        boolean flag = true;
         try {
-            float health = Float.parseFloat(request.getArgs().trim());
-            collectionManager.removeGreater(health);
-            return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный");
+            while (flag) {
+                float health = Float.parseFloat(request.getArgs().trim());
+                if (health > 0) {
+                    flag = false;
+                    collectionManager.removeGreater(health);
+                    return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный");
+                } else {
+                    System.out.println("Уровень здоровье должен быть больше 0");
+                }
+            }
         } catch (NoSuchElementException e) {
             return new Response(ResponseStatus.ERROR, "В коллекции нет элементов");
         } catch (FileModeException e) {
             return new Response(ResponseStatus.ERROR, "Поля в файле не валидны! Объект не создан");
+        } catch (NumberFormatException e){
+            return new Response(ResponseStatus.ERROR, "Число введено неверно");
         }
+        return null;
     }
     }
 

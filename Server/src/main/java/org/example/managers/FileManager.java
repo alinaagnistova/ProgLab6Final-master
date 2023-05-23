@@ -69,7 +69,13 @@ public final class FileManager {
                 System.out.println("Введите название файла еще раз");
                 Scanner scanner = new Scanner(System.in);
                 String fileName = scanner.nextLine();
-                FileManager.loadFromXml(fileName);
+                    File file = new File(fileName);
+                if (file.exists() && !file.isDirectory()) {
+                    FileManager.loadFromXml(fileName);
+                    break;
+                }else{
+                    readFileName();
+                }
                 } catch (JAXBException e) {
                 System.out.println("С файлом что-то не так, либо он пуст");
             } catch (FileNotFoundException e) {
