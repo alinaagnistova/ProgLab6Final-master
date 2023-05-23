@@ -14,7 +14,7 @@ public class HelpCommand extends BaseCommand {
     private CommandManager commandManager;
 
     public HelpCommand(CommandManager commandManager) {
-        super("help", ": вывести справку по доступным командам");
+        super("help", "help: вывести справку по доступным командам");
         this.commandManager = commandManager;
     }
     /**
@@ -28,6 +28,6 @@ public class HelpCommand extends BaseCommand {
         return new Response(ResponseStatus.OK,
                 String.join("\n",
                         commandManager.getCommands()
-                                .stream().map(BaseCommand::toString).toList()));
+                                .stream().map(BaseCommand::getDescription) +"\n"));
     }
 }

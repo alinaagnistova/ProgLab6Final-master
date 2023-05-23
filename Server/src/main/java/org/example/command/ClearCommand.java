@@ -16,7 +16,7 @@ public class ClearCommand extends BaseCommand implements CollectionEditor{
     private CollectionManager collectionManager;
 
     public ClearCommand(CollectionManager collectionManager) {
-        super("clear", "clear : очистить коллекцию");
+        super("clear", "clear: очистить коллекцию");
         this.collectionManager = collectionManager;
     }
 
@@ -25,6 +25,6 @@ public class ClearCommand extends BaseCommand implements CollectionEditor{
     public Response execute(Request request) throws CommandRuntimeException, ExitObligedException, IllegalArgumentsException {
         if (!request.getArgs().isBlank()) throw new IllegalArgumentsException();
         collectionManager.clear();
-        return new Response(ResponseStatus.OK,"Элементы удалены");
+        return new Response(ResponseStatus.OK,"Элементы удалены\n");
     }
 }

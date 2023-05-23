@@ -19,7 +19,7 @@ public class SortCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
     public SortCommand(CollectionManager collectionManager) {
-        super("sort", "отсортировать коллекцию в естественном порядке");
+        super("sort", "sort: отсортировать коллекцию в естественном порядке");
         this.collectionManager = collectionManager;
     }
     /**
@@ -33,6 +33,7 @@ public class SortCommand extends BaseCommand implements CollectionEditor{
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: ", collectionManager.sort());
+        collectionManager.sort();
+        return new Response(ResponseStatus.OK, "Коллекция отсортирована\n");
     }
     }

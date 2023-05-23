@@ -17,7 +17,7 @@ public class ShowCommand extends BaseCommand {
     private CollectionManager collectionManager;
 
     public ShowCommand(CollectionManager collectionManager) {
-        super("show", ": вывести в стандартный поток вывода все элементы коллекции в строковом представлении");
+        super("show", "show: вывести в стандартный поток вывода все элементы коллекции в строковом представлении");
         this.collectionManager = collectionManager;
     }
 
@@ -33,6 +33,6 @@ public class ShowCommand extends BaseCommand {
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.information());
+        return new Response(ResponseStatus.OK, "Коллекция: \n" + collectionManager.information() + "\n");
     }
 }

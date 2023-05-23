@@ -15,7 +15,7 @@ public class PrintFieldDescendingWeapon extends BaseCommand {
     private final CollectionManager collectionManager;
 
     public PrintFieldDescendingWeapon(CollectionManager collectionManager) {
-        super("print_field_descending_weapon_type", "вывести значения поля weaponType всех элементов в порядке убывания");
+        super("print_field_descending_weapon_type", "print_field_descending_weapon_type: вывести значения поля weaponType всех элементов в порядке убывания");
         this.collectionManager = collectionManager;
     }
 
@@ -25,7 +25,7 @@ public class PrintFieldDescendingWeapon extends BaseCommand {
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.information());
+        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.printFieldDescendingWeapon() + "\n");
     }
 }
 

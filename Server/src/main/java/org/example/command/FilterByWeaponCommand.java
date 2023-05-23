@@ -18,7 +18,7 @@ public class FilterByWeaponCommand extends BaseCommand{
     private CollectionManager collectionManager;
 
     public FilterByWeaponCommand(CollectionManager collectionManager) {
-        super("filter_by_weapon_type", "вывести элементы, значение поля weaponType которых равно заданному");
+        super("filter_by_weapon_type", "filter_by_weapon_type weaponType: вывести элементы, значение поля weaponType которых равно заданному");
         this.collectionManager = collectionManager;
     }
 

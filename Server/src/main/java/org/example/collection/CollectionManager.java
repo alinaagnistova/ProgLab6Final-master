@@ -174,9 +174,8 @@ public class CollectionManager implements ICollectionManager, Serializable {
      * shuffle collection
      */
     @Override
-    public LinkedList<SpaceMarine> shuffle() {
+    public void shuffle() {
         Collections.shuffle(collection);
-        return collection;
     }
 
 //    /**
@@ -204,9 +203,8 @@ public class CollectionManager implements ICollectionManager, Serializable {
      * sort collection
      */
     @Override
-    public LinkedList<SpaceMarine> sort() {
+    public void sort() {
         Collections.sort(collection);
-        return collection;
     }
 
     /**

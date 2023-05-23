@@ -22,7 +22,7 @@ public class UpdateIdCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
     public UpdateIdCommand(CollectionManager collectionManager) {
-        super("update", " id {element}: обновить значение элемента коллекции, id которого равен заданному");
+        super("update", "update id {element}: обновить значение элемента коллекции, id которого равен заданному");
         this.collectionManager = collectionManager;
     }
     /**

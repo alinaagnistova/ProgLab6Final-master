@@ -14,7 +14,7 @@ public class ShuffleCommand extends BaseCommand implements CollectionEditor{
     private final CollectionManager collectionManager;
 
     public ShuffleCommand(CollectionManager collectionManager) {
-        super("shuffle", "перемешать элементы коллекции в случайном порядке");
+        super("shuffle", "shuffle: перемешать элементы коллекции в случайном порядке");
         this.collectionManager = collectionManager;
     }
 
@@ -24,7 +24,8 @@ public class ShuffleCommand extends BaseCommand implements CollectionEditor{
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: ", collectionManager.shuffle());
+        collectionManager.shuffle();
+        return new Response(ResponseStatus.OK, "Коллекция перемешана");
     }
 
 }

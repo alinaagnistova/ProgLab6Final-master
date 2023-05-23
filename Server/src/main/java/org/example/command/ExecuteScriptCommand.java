@@ -15,7 +15,7 @@ public class ExecuteScriptCommand extends BaseCommand {
      * выполнить скрипт
      */
         public ExecuteScriptCommand() {
-            super("execute_script", ": выполнить скрипт");
+            super("execute_script", "execute_script: выполнить скрипт");
         }
 
         /**

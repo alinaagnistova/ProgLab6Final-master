@@ -29,6 +29,7 @@ public class MainClient {
     }
 
     public static void main(String[] args) {
+        System.out.println("Для получения справки о доступных командах введите help");
         if (!parseHostPort(args)) return;
         Console console = new Console();
         Client client = new Client(host, port, 5000, 5, console);

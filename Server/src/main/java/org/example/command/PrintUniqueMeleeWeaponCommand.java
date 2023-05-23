@@ -13,7 +13,7 @@ public class PrintUniqueMeleeWeaponCommand extends BaseCommand{
     private final CollectionManager collectionManager;
 
     public PrintUniqueMeleeWeaponCommand(CollectionManager collectionManager) {
-        super("print_unique_melee_weapon", "вывести уникальные значения поля meleeWeapon всех элементов в коллекции");
+        super("print_unique_melee_weapon", "print_unique_melee_weapon: вывести уникальные значения поля meleeWeapon всех элементов в коллекции");
         this.collectionManager = collectionManager;
     }
 
@@ -23,7 +23,7 @@ public class PrintUniqueMeleeWeaponCommand extends BaseCommand{
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.information());
+        return new Response(ResponseStatus.OK, "Коллекция: " + collectionManager.printUniqueMeleeWeapon() + "\n");
     }
 
 }

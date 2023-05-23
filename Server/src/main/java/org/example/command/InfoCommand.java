@@ -17,7 +17,7 @@ public class InfoCommand extends BaseCommand {
     private final CollectionManager collectionManager;
 
     public InfoCommand(CollectionManager collectionManager) {
-        super("info", ": вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
+        super("info", "info: вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
         this.collectionManager = collectionManager;
     }
     /**
@@ -39,6 +39,6 @@ public class InfoCommand extends BaseCommand {
 //                ConsoleColors.toColor("Количество элементов: ", ConsoleColors.GREEN) + collectionManager.getC + "\n" +
 //                ConsoleColors.toColor("Дата последней инициализации: ", ConsoleColors.GREEN) + lastInitTime + "\n" +
 //                ConsoleColors.toColor("Дата последнего изменения: ", ConsoleColors.GREEN) + lastSaveTime + "\n";
-        return new Response(ResponseStatus.OK, collectionManager.info());
+        return new Response(ResponseStatus.OK, collectionManager.info() + "\n");
     }
 }

@@ -1,5 +1,6 @@
 package org.example.forms;
 
+import org.example.utils.ReadManager;
 import org.example.utils.Readable;
 import org.example.console.*;
 import org.example.data.Chapter;
@@ -11,7 +12,6 @@ import java.time.LocalDate;
 
 public class SpaceMarineForm extends Form<SpaceMarine> {
     private final ReaderWriter console;
-    private Readable readManager;
     private final UserInput scanner;
 
     public SpaceMarineForm(Console console) {
@@ -30,6 +30,7 @@ public class SpaceMarineForm extends Form<SpaceMarine> {
      */
     @Override
     public SpaceMarine build() {
+        ReadManager readManager = new ReadManager();
         LocalDate localDate = LocalDate.now();
         SpaceMarine spaceMarine = new SpaceMarine(
                         readManager.readName(),

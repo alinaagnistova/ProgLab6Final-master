@@ -30,5 +30,8 @@ public abstract class BaseCommand implements Executable{
         this.argument = argument;
     }
 
-
+    @Override
+    public String toString() {
+        return  name + ":" + description;
+    }
 }

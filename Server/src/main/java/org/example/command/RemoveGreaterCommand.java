@@ -19,7 +19,7 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
     private final CollectionManager collectionManager;
 
     public RemoveGreaterCommand(CollectionManager collectionManager) {
-        super("remove_greater", " {element} : удалить из коллекции все элементы, превышающие заданный");
+        super("remove_greater", "remove_greater {element} : удалить из коллекции все элементы, превышающие заданный");
         this.collectionManager = collectionManager;
     }
 

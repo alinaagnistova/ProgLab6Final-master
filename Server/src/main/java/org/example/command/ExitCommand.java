@@ -11,7 +11,7 @@ import org.example.error.IllegalArgumentsException;
  */
 public class ExitCommand extends BaseCommand {
     public ExitCommand() {
-        super("exit", ": завершить программу (без сохранения в файл)");
+        super("exit", "exit: завершить программу (без сохранения в файл)");
     }
     /**
      * Исполнить команду

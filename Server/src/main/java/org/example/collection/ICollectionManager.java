@@ -20,8 +20,8 @@ public interface ICollectionManager {
 //    void removeById(Long id);
 //    void getByID();
 //    void removeGreater(Float health);
-    LinkedList<SpaceMarine> sort();
-    LinkedList<SpaceMarine> shuffle();
+    void sort();
+    void shuffle();
 
     ArrayList<SpaceMarine> filterByWeapon(Weapon weaponType);
     ArrayList<MeleeWeapon> printUniqueMeleeWeapon();

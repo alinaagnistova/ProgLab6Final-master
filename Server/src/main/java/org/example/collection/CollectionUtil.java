@@ -36,8 +36,9 @@ public class CollectionUtil {
                     "\nТип оружия – " + spaceMarine.getWeaponType() +
                     "\nТип оружия ближнего боя – " + spaceMarine.getMeleeWeapon() +
                     "\nНазвание дивизиона – " + spaceMarine.getChapter().getName() +
-                    "\nКоличество бойцов дивизиона – " + spaceMarine.getChapter().getMarinesCount()
-                    );
+                    "\nКоличество бойцов дивизиона – " + spaceMarine.getChapter().getMarinesCount() +
+                    "\n-----------------------------------------------------------------------------\n"
+            );
         }
         public boolean checkIfCorrect(SpaceMarine spaceMarine){
             if (
