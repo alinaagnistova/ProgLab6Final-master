@@ -12,23 +12,13 @@
   <component name="ChangeListManager">
     <list default="true" id="bd44b7b1-4b03-4f76-a98e-6a33cacd0fbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/script1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/console/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/console/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/ChapterForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/ChapterForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/CoordinatesForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/CoordinatesForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/SpaceMarineForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/forms/SpaceMarineForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ClientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ClientManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ReadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/org/example/utils/ReadManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/java/org/example/dtp/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/java/org/example/dtp/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/collection/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/FilterByWeaponCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintFieldDescendingWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintFieldDescendingWeapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintUniqueMeleeWeaponCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/PrintUniqueMeleeWeaponCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/RemoveGreaterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/ShuffleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/command/UpdateIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/utils/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/utils/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/main/java/org/example/utils/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/main/java/org/example/utils/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/test.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +107,32 @@
       <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Compound.Unnamed">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-16" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainClient" />
+      <module name="Client" />
+      <option name="PROGRAM_PARAMETERS" value="localhost 6086" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-16" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MainServer" />
+      <module name="Server" />
+      <option name="PROGRAM_PARAMETERS" value="Server\test.xml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="CompoundRunConfigurationType">
+      <toRun name="Client" type="Application" />
+      <toRun name="Server" type="Application" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="lab6" />
       <method v="2">
@@ -131,6 +146,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Compound.Unnamed" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -160,7 +180,7 @@
       <workItem from="1684969272139" duration="3256000" />
       <workItem from="1685014973159" duration="3242000" />
       <workItem from="1685023478469" duration="704000" />
-      <workItem from="1685035293286" duration="7895000" />
+      <workItem from="1685035293286" duration="13967000" />
     </task>
     <task id="LOCAL-00001" summary="separation modules">
       <created>1683879895685</created>
@@ -218,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684882142921</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixing execute_script">
+      <created>1685046492486</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685046492486</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +257,7 @@
     <MESSAGE value="rewrote command realization" />
     <MESSAGE value="wrote server module" />
     <MESSAGE value="fixing command realization" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing command realization" />
+    <MESSAGE value="fixing execute_script" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing execute_script" />
   </component>
 </project>

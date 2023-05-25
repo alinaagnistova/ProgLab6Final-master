@@ -29,7 +29,7 @@ public class CoordinatesForm extends Form<Coordinates> {
      */
     @Override
     public Coordinates build() {
-        ReadManager readManager = new ReadManager();
+        ReadManager readManager = new ReadManager(console);
         return new Coordinates(
                 readManager.readCoordinateX(),
                 readManager.readCoordinateY()

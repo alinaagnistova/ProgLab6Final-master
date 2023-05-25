@@ -9,6 +9,10 @@ import java.util.Scanner;
 public class Console implements ReaderWriter {
 private static boolean fileMode = false;
 
+    public Console() {
+
+    }
+
     public static boolean isFileMode() {
         return fileMode;
     }

@@ -25,7 +25,7 @@ public class ChapterForm extends Form<Chapter>{
      */
     @Override
     public Chapter build() {
-        ReadManager readManager = new ReadManager();
+        ReadManager readManager = new ReadManager(console);
         return new Chapter(
                 readManager.readName(),
                 readManager.readChapterMarinesCount()

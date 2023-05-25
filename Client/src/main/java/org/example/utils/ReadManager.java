@@ -1,11 +1,9 @@
 package org.example.utils;
 
-import org.example.console.Console;
+import org.example.console.*;
 import org.example.data.AstartesCategory;
 import org.example.data.MeleeWeapon;
 import org.example.data.Weapon;
-import org.example.dtp.Response;
-import org.example.dtp.ResponseStatus;
 import org.example.error.FileModeException;
 
 import java.util.Arrays;
@@ -13,8 +11,18 @@ import java.util.Arrays;
  * The class is responsible for what the user enters
  */
 public class ReadManager implements Readable {
-    Console consoleManager = new Console();
-    Response response = new Response();
+    private final ReaderWriter console;
+    private final UserInput scanner;
+
+    public ReadManager(ReaderWriter console) {
+        this.console = (Console.isFileMode())
+                ? new BlankConsole()
+                : console;
+        this.scanner = (Console.isFileMode())
+                ? new ExecuteFileManager()
+                : new ConsoleInput();
+    }
+
     /**
      * method checks if the name is entered correctly, it contains only letters or not
      *
@@ -24,10 +32,10 @@ public class ReadManager implements Readable {
     public String readName() {
             String name;
             while (true) {
-                consoleManager.write("Введите имя/название отряда:");
-                name = consoleManager.readLine();
+                console.write("Введите имя/название отряда:");
+                name = scanner.nextLine().trim();
                 if (name.equals("") || !name.matches("^[a-zA-Z-А-Яа-я]*$")) {
-                    consoleManager.printError("Имя не может быть пустой строкой/иными знаками, кроме букв");
+                    console.printError("Имя не может быть пустой строкой/иными знаками, кроме букв");
                     if (Console.isFileMode()) throw new FileModeException();
 //                    System.out.println("Имя не может быть пустой строкой, введите имя");
 //                    name = consoleManager.readLine();
@@ -48,19 +56,19 @@ public class ReadManager implements Readable {
     @Override
     public Integer readCoordinateX() {
         while (true) {
-            consoleManager.write("Введите координату X:");
-            String input = consoleManager.readLine();
+            console.write("Введите координату X:");
+            String input = scanner.nextLine().trim();
             try {
                 int x = Integer.parseInt(input);
                 if (x <= -595){
-                    consoleManager.printError("Значение поля должно быть больше -595");
+                    console.printError("Значение поля должно быть больше -595");
                 }
                 if (input.isEmpty()){
-                    consoleManager.printError("Введите число, а не пустую строку");
+                    console.printError("Введите число, а не пустую строку");
                 }else{
                 return x;}
             } catch (NumberFormatException exception) {
-                consoleManager.printError("Число введено неверно");
+                console.printError("Число введено неверно");
                 if (Console.isFileMode()) throw new FileModeException();
             }
         }
@@ -96,17 +104,17 @@ public class ReadManager implements Readable {
     @Override
     public Float readCoordinateY() {
         while (true) {
-            consoleManager.write("Введите координату Y:");
-            String input = consoleManager.readLine();
+            console.write("Введите координату Y:");
+            String input = scanner.nextLine().trim();
             try {
                 float y = Float.parseFloat(input);
                 if (input.isEmpty()) {
-                    consoleManager.printError("Введите число, а не пустую строку");
+                    console.printError("Введите число, а не пустую строку");
                 } else {
                     return y;
                 }
             } catch (NumberFormatException exception) {
-                consoleManager.printError("Число введено неверно");
+                console.printError("Число введено неверно");
                 if (Console.isFileMode()) throw new FileModeException();
             }
         }
@@ -140,17 +148,17 @@ public class ReadManager implements Readable {
     @Override
     public Float readHealth() {
         while (true) {
-            consoleManager.write("ведите уровень здоровья бойца:");
-            String input = consoleManager.readLine();
+            console.write("ведите уровень здоровья бойца:");
+            String input = scanner.nextLine().trim();
             try {
                 float health = Float.parseFloat(input);
                 if (input.isEmpty()) {
-                    consoleManager.printError("Введите число, а не пустую строку");
+                    console.printError("Введите число, а не пустую строку");
                 } else {
                     return health;
                 }
             } catch (NumberFormatException exception) {
-                consoleManager.printError("Число введено неверно");
+                console.printError("Число введено неверно");
                 if (Console.isFileMode()) throw new FileModeException();
             }
         }
@@ -177,10 +185,10 @@ public class ReadManager implements Readable {
 
     @Override
     public AstartesCategory readCategory() {
-        consoleManager.write("Вы должны ввести одно из перечисленных видов оружия:" + Arrays.toString(AstartesCategory.values()));
+        console.write("Вы должны ввести одно из перечисленных видов оружия:" + Arrays.toString(AstartesCategory.values()));
         AstartesCategory astartesCategory;
         try{
-            astartesCategory = AstartesCategory.valueOf(consoleManager.getValidatedValue("\nВведите вид оружия:").toUpperCase());
+            astartesCategory = AstartesCategory.valueOf(console.getValidatedValue("\nВведите вид оружия:").toUpperCase());
         }catch (IllegalArgumentException e){
             astartesCategory = readCategory();
             if (Console.isFileMode()) throw new FileModeException();
@@ -189,10 +197,10 @@ public class ReadManager implements Readable {
     }
     @Override
     public Weapon readWeapon(){
-        consoleManager.write("Вы должны ввести одно из перечисленных видов оружия:" + Arrays.toString(Weapon.values()));
+        console.write("Вы должны ввести одно из перечисленных видов оружия:" + Arrays.toString(Weapon.values()));
         Weapon weapon;
         try {
-            weapon = Weapon.valueOf(consoleManager.getValidatedValue("\nВведите вид оружия:").toUpperCase());
+            weapon = Weapon.valueOf(console.getValidatedValue("\nВведите вид оружия:").toUpperCase());
         }catch (IllegalArgumentException e){
             weapon = readWeapon();
             if (Console.isFileMode()) throw new FileModeException();
@@ -201,10 +209,10 @@ public class ReadManager implements Readable {
     }
     @Override
     public MeleeWeapon readMeleeWeapon() {
-        consoleManager.write("Вы должны ввести одно из перечисленных видов оружия ближнего боя:" + Arrays.toString(MeleeWeapon.values()));
+        console.write("Вы должны ввести одно из перечисленных видов оружия ближнего боя:" + Arrays.toString(MeleeWeapon.values()));
         MeleeWeapon meleeWeapon;
         try {
-            meleeWeapon = MeleeWeapon.valueOf(consoleManager.getValidatedValue("\nВведите вид оружия ближнего боя:").toUpperCase());
+            meleeWeapon = MeleeWeapon.valueOf(console.getValidatedValue("\nВведите вид оружия ближнего боя:").toUpperCase());
         }catch (IllegalArgumentException e){
             meleeWeapon = readMeleeWeapon();
             if (Console.isFileMode()) throw new FileModeException();
@@ -214,17 +222,17 @@ public class ReadManager implements Readable {
     @Override
     public Integer readChapterMarinesCount(){
         while (true) {
-            consoleManager.write("Введите количество бойцов дивизиона:");
-            String input = consoleManager.readLine();
+            console.write("Введите количество бойцов дивизиона:");
+            String input = scanner.nextLine().trim();
             try {
                 int marinesCount = Integer.parseInt(input);
                 if (input.isEmpty()) {
-                    consoleManager.printError("Введите число, а не пустую строку");
+                    console.printError("Введите число, а не пустую строку");
                 } else {
                     return marinesCount;
                 }
             } catch (NumberFormatException exception) {
-                consoleManager.printError("Число введено неверно");
+                console.printError("Число введено неверно");
                 if (Console.isFileMode()) throw new FileModeException();
             }
         }

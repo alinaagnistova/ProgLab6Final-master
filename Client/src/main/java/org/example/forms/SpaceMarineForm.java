@@ -1,11 +1,9 @@
 package org.example.forms;
 
+import org.example.data.*;
 import org.example.utils.ReadManager;
 import org.example.utils.Readable;
 import org.example.console.*;
-import org.example.data.Chapter;
-import org.example.data.Coordinates;
-import org.example.data.SpaceMarine;
 import org.example.utils.ExecuteFileManager;
 
 import java.time.LocalDate;
@@ -30,16 +28,16 @@ public class SpaceMarineForm extends Form<SpaceMarine> {
      */
     @Override
     public SpaceMarine build() {
-        ReadManager readManager = new ReadManager();
+        ReadManager readManager = new ReadManager(console);
         LocalDate localDate = LocalDate.now();
         SpaceMarine spaceMarine = new SpaceMarine(
                         readManager.readName(),
                         readCoordinates(),
                         readManager.readHealth(),
                         localDate,
-                        readManager.readCategory(),
-                        readManager.readWeapon(),
-                        readManager.readMeleeWeapon(),
+                        readAstartesCategory(),
+                        readWeapon(),
+                        readMeleeWeapon(),
                         readChapter()
                 );
         return spaceMarine;
@@ -50,4 +48,15 @@ public class SpaceMarineForm extends Form<SpaceMarine> {
     private Chapter readChapter(){
         return new ChapterForm(console).build();
     }
+    private AstartesCategory readAstartesCategory(){
+        return new AstartesCategoryForm(console).build();
+    }
+    private Weapon readWeapon(){
+        return new WeaponForm(console).build();
+    }
+    private MeleeWeapon readMeleeWeapon(){
+        return new MeleeWeaponForm(console).build();
+    }
+
+
 }
