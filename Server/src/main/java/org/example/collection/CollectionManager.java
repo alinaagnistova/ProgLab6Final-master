@@ -92,7 +92,7 @@ public class CollectionManager implements ICollectionManager, Serializable {
      */
     @Override
     public String info() {
-        String info = "Type of collection:" + collection.getClass().getSimpleName() + "\nDate of initialization:" + date + "\nNumbers of elements:" + collection.size();
+        String info = "Type of collection:" + collection.getClass().getSimpleName() + "\nDate of initialization:" + date + "\nNumbers of elements:" + collection.size() + "\n";
         return info;
     }
 
@@ -108,7 +108,7 @@ public class CollectionManager implements ICollectionManager, Serializable {
         for (SpaceMarine spaceMarine : collection) {
             information.append(CollectionUtil.display(spaceMarine));
         }
-        return information.toString();
+        return information.toString() + "\n";
     }
 
     /**

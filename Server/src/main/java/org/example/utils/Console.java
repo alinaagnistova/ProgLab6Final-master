@@ -1,5 +1,9 @@
 package org.example.utils;
 
+import org.example.data.*;
+import org.example.error.InvalidInputException;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Console implements ReaderWriter {
@@ -51,6 +55,6 @@ public class Console implements ReaderWriter {
                 return userPrint;
             }
         }
-
     }
-}
+    }
+

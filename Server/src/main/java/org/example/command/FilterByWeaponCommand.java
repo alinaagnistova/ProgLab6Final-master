@@ -37,10 +37,10 @@ public class FilterByWeaponCommand extends BaseCommand{
         if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
         try {
             Weapon weapon = Weapon.valueOf(request.getArgs().trim().toUpperCase());
-            return new Response(ResponseStatus.OK, "Элементы коллекции с заданным weaponType: \n" + collectionManager.filterByWeapon(weapon));
+            return new Response(ResponseStatus.OK, "Элементы коллекции с заданным weaponType: \n" + collectionManager.filterByWeapon(weapon) + "\n");
         } catch (IllegalArgumentException exception){
             System.out.println("Введенный тип оружия не существует. Попробуйте что-то из списка: " + Arrays.toString(Weapon.values()));
         }
-        return new Response(ResponseStatus.ERROR, "Хули ты мне тут херню пихаешь? Это не енам сука \n");
+        return new Response(ResponseStatus.ERROR, "Неверный тип данных");
     }
 }

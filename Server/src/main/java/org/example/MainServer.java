@@ -13,6 +13,7 @@ import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Scanner;
 
 public class MainServer extends Thread{
         public static int PORT = 6086;
@@ -28,7 +29,6 @@ public class MainServer extends Thread{
                 } catch (NumberFormatException ignored) {}
             }
             CollectionManager collectionManager = new CollectionManager();
-//            FileManager fileManager = new FileManager(console, collectionManager);
               FileManager fileManager = new FileManager();
 
             try{
@@ -39,7 +39,7 @@ public class MainServer extends Thread{
                     fileManager.loadFromXml(args[0]);
                     collectionManager.checkCollection();
                     MainServer.rootLogger.info("Создание объектов успешно завершено");
-                }else{
+                }else {
                     fileManager.readFileName();
                 }
             } catch (JAXBException | FileNotFoundException e){

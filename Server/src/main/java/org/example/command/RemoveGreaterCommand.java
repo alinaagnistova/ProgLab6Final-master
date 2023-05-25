@@ -35,7 +35,7 @@ public class RemoveGreaterCommand extends BaseCommand implements CollectionEdito
                 float health = Float.parseFloat(request.getArgs().trim());
                 if (health > 0) {
                     collectionManager.removeGreater(health);
-                    return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный");
+                    return new Response(ResponseStatus.OK, "Удалены элементы большие чем заданный\n");
                 } else {
                     System.out.println("Уровень здоровье должен быть больше 0");
                     return new Response(ResponseStatus.WRONG_ARGUMENTS, "Упс, что-то пошло не так");

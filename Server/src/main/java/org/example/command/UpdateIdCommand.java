@@ -40,7 +40,7 @@ public class UpdateIdCommand extends BaseCommand implements CollectionEditor{
                 return new Response(ResponseStatus.ASK_OBJECT, "Для команды " + this.getName() + " требуется объект");
             }
             collectionManager.updateId(request.getObject(), ID);
-            return new Response(ResponseStatus.OK, "Объект успешно обновлен");
+            return new Response(ResponseStatus.OK, "Объект успешно обновлен\n");
         } catch (NoSuchIDException err) {
             return new Response(ResponseStatus.ERROR,"В коллекции нет элемента с таким id");
         } catch (NumberFormatException exception) {

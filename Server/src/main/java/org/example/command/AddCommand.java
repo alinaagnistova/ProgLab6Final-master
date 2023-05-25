@@ -6,6 +6,7 @@ import org.example.dtp.Request;
 import org.example.dtp.Response;
 import org.example.dtp.ResponseStatus;
 import org.example.error.IllegalArgumentsException;
+import org.example.utils.Console;
 
 import java.util.Objects;
 
@@ -28,11 +29,15 @@ public class AddCommand extends BaseCommand implements CollectionEditor{
     @Override
     public Response execute(Request request) throws IllegalArgumentsException {
         if (!request.getArgs().isBlank()) throw new IllegalArgumentsException();
+//        if (ExecuteScriptCommand.isFlag()){
+//
+//            Console.createSpaceMarineFromScript(request.ge);
+//        }
         if (Objects.isNull(request.getObject())){
             return new Response(ResponseStatus.ASK_OBJECT, "Для команды " + this.getName() + " требуется объект");
         } else{
             collectionManager.addSpaceMarine(request.getObject());
-            return new Response(ResponseStatus.OK, "Объект успешно добавлен");
+            return new Response(ResponseStatus.OK, "Объект успешно добавлен\n");
         }
     }
 

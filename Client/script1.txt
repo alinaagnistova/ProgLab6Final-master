@@ -1,1 +1,10 @@
-execute_script script2.txt
+add
+testname
+3
+4
+54
+SCOUT
+FLAMER
+POWER_SWORD
+chapterName
+4

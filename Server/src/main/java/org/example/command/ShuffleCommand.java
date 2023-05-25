@@ -25,7 +25,7 @@ public class ShuffleCommand extends BaseCommand implements CollectionEditor{
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
         collectionManager.shuffle();
-        return new Response(ResponseStatus.OK, "Коллекция перемешана");
+        return new Response(ResponseStatus.OK, "Коллекция перемешана\n");
     }
 
 }

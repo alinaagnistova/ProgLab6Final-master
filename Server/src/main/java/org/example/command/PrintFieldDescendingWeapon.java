@@ -25,7 +25,7 @@ public class PrintFieldDescendingWeapon extends BaseCommand {
         if (CollectionManager.getCollection() == null || CollectionManager.getCollection().isEmpty()) {
             return new Response(ResponseStatus.ERROR, "Коллекция еще не инициализирована");
         }
-        return new Response(ResponseStatus.OK, "Значения поля weaponType всех элементов:" + collectionManager.printFieldDescendingWeapon());
+        return new Response(ResponseStatus.OK, "Значения поля weaponType всех элементов:" + collectionManager.printFieldDescendingWeapon() + "\n");
     }
 }
 

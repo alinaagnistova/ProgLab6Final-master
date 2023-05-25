@@ -1,2 +1,10 @@
-info
-execute_script script.txt
+add
+scriptObj
+2
+3
+70
+SCOUT
+FLAMER
+POWER_SWORD
+scriptSquad
+8

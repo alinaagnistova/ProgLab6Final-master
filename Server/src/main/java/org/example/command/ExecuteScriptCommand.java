@@ -10,6 +10,12 @@ import org.example.error.IllegalArgumentsException;
  * The script contains commands in the same form as they are entered by the user in interactive mode.
  */
 public class ExecuteScriptCommand extends BaseCommand {
+    static boolean flag = false;
+
+    public static boolean isFlag() {
+        return flag;
+    }
+
     /**
      * Команда 'execute'
      * выполнить скрипт
@@ -25,6 +31,7 @@ public class ExecuteScriptCommand extends BaseCommand {
          */
         @Override
         public Response execute(Request request) throws IllegalArgumentsException {
+            flag = true;
             if (request.getArgs().isBlank()) throw new IllegalArgumentsException();
             return new Response(ResponseStatus.EXECUTE_SCRIPT, request.getArgs());
         }

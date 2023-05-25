@@ -8,9 +8,12 @@ import java.util.Comparator;
 import java.util.Objects;
 
 public class Response implements Serializable {
-    private final ResponseStatus status;
+    private ResponseStatus status;
     private String response = "";
     private Collection<SpaceMarine> collection;
+
+    public Response() {
+    }
 
     public Response(ResponseStatus status) {
         this.status = status;
@@ -18,7 +21,7 @@ public class Response implements Serializable {
 
     public Response(ResponseStatus status, String response) {
         this.status = status;
-        this.response = response.trim();
+        this.response = response.trim() + "\n";
     }
 
     public Response(ResponseStatus status, String response, Collection<SpaceMarine> collection) {
